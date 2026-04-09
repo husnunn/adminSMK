@@ -1529,7 +1529,7 @@ onMounted(async () => {
 .form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 .form-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; color: var(--color-on-surface-variant); }
 .required { color: var(--color-error); }
-.optional { color: var(--color-outline); font-text-transform: none !important; font-size: 10px; text-transform: none; }
+.optional { color: var(--color-outline); text-transform: none !important; font-size: 10px; text-transform: none; }
 .form-hint { font-size: 11px; color: var(--color-on-surface-variant); font-style: italic; margin-top: 2px; }
 
 .form-input {
