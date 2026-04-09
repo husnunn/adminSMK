@@ -1,4 +1,4 @@
-# Logs
+# ─── Logs ────────────────────────────────────────────────────────────────────
 logs
 *.log
 npm-debug.log*
@@ -7,19 +7,80 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# ─── Dependencies ─────────────────────────────────────────────────────────────
 node_modules
+
+# ─── Build Output ─────────────────────────────────────────────────────────────
 dist
 dist-ssr
 *.local
 
-# Editor directories and files
+# ─── Environment Variables (PENTING - jangan pernah di-commit!) ──────────────
+.env
+.env.*
+!.env.example
+!.env.template
+*.env
+
+# ─── Supabase ─────────────────────────────────────────────────────────────────
+.supabase/
+supabase/.branches/
+supabase/.temp/
+
+# ─── Editor & IDE ─────────────────────────────────────────────────────────────
 .vscode/*
 !.vscode/extensions.json
+!.vscode/settings.json
 .idea
-.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
 .aider*
+*.code-workspace
+
+# ─── OS Files ─────────────────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ─── Testing & Coverage ───────────────────────────────────────────────────────
+coverage/
+*.test-results/
+playwright-report/
+.vitest/
+test-results/
+
+# ─── Build Cache ──────────────────────────────────────────────────────────────
+.cache
+.parcel-cache
+*.tsbuildinfo
+.turbo
+
+# ─── Temporary & Sensitive Files ──────────────────────────────────────────────
+*.tmp
+*.bak
+*.swp
+*~
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+
+# ─── Uploaded/Generated Files (lokal saja, bukan aset proyek) ─────────────────
+*.csv.tmp
+uploads/
+exports/
+
+# ─── Package Manager Locks (pilih salah satu, sisanya ignore) ────────────────
+# Jika pakai npm → biarkan package-lock.json, tambahkan baris ini:
+# yarn.lock
+# pnpm-lock.yaml
+# Jika pakai pnpm → biarkan pnpm-lock.yaml, tambahkan baris ini:
+# yarn.lock

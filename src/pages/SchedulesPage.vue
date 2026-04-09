@@ -269,13 +269,13 @@ function selectDay(day) {
 // =====================================================
 function openAddKelas() {
   modalKelas.mode = 'add'
-  modalKelas.data = { id: null, nama_kelas: '', jurusan: '' }
+  modalKelas.data = { id: null, nama_kelas: ''}
   modalKelas.open = true
 }
 
 function openEditKelas(row) {
   modalKelas.mode = 'edit'
-  modalKelas.data = { id: row.id, nama_kelas: row.nama_kelas, jurusan: row.jurusan }
+  modalKelas.data = { id: row.id, nama_kelas: row.nama_kelas }
   modalKelas.open = true
 }
 
@@ -283,7 +283,7 @@ async function saveKelas() {
   if (!modalKelas.data.nama_kelas.trim()) { toast.warn('Nama kelas wajib diisi.'); return }
   isSavingKelas.value = true
   try {
-    const payload = { nama_kelas: modalKelas.data.nama_kelas, jurusan: modalKelas.data.jurusan }
+    const payload = { nama_kelas: modalKelas.data.nama_kelas }
     if (modalKelas.mode === 'add') {
       const { error } = await supabase.from('master_kelas').insert([payload])
       if (error) throw error

@@ -20,12 +20,12 @@ const routes = [
     component: () => import('../pages/StudentsTeachersPage.vue'),
     meta: { title: 'User Management | adminSekolah', defaultTab: 'students', requiresAuth: true }
   },
-  // {
-  //   path: '/teachers',
-  //   name: 'Teachers',
-  //   component: () => import('../pages/StudentsTeachersPage.vue'),
-  //   meta: { title: 'User Management | adminSekolah', defaultTab: 'teachers', requiresAuth: true }
-  // },
+  {
+    path: '/absensi',
+    name: 'Absensi',
+    component: () => import('../pages/AbsensiPage.vue'),
+    meta: { title: 'Rekap Absensi | adminSekolah', requiresAuth: true }
+  },
   {
     path: '/schedules',
     name: 'Schedules',

@@ -8,10 +8,10 @@ const route = useRoute()
 const router = useRouter()
 
 const navItems = [
-  { label: 'Dasbor', icon: 'dashboard', to: '/' },
-  { label: 'Data Induk', icon: 'group', to: '/students' },
-  // { label: 'Teachers', icon: 'school', to: '/teachers' },
-  { label: 'Jadwal', icon: 'calendar_today', to: '/schedules' },
+  { label: 'Dasbor',           icon: 'dashboard',    to: '/' },
+  { label: 'Data Induk',       icon: 'group',        to: '/students' },
+  { label: 'Rekap Absensi',    icon: 'fact_check',   to: '/absensi' },
+  { label: 'Jadwal',           icon: 'calendar_today', to: '/schedules' },
   { label: 'Sistem Pemantauan', icon: 'location_on', to: '/geofencing' },
 ]
 
