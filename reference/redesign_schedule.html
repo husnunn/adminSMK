@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Akademik &amp; Penjadwalan - adminSekolah</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-surface": "#191c1e",
+            "tertiary-container": "#743b00",
+            "outline": "#727780",
+            "surface-variant": "#e0e3e5",
+            "on-secondary-fixed": "#002020",
+            "tertiary-fixed": "#ffdcc4",
+            "on-primary-fixed": "#001c37",
+            "background": "#f7f9fb",
+            "on-secondary-container": "#006e6e",
+            "surface-container": "#eceef0",
+            "surface-bright": "#f7f9fb",
+            "surface-dim": "#d8dadc",
+            "outline-variant": "#c2c7d1",
+            "surface": "#f7f9fb",
+            "primary-fixed": "#d2e4ff",
+            "on-secondary-fixed-variant": "#004f4f",
+            "on-error-container": "#93000a",
+            "tertiary-fixed-dim": "#ffb780",
+            "secondary-container": "#90efef",
+            "on-tertiary-fixed": "#2f1400",
+            "surface-container-low": "#f2f4f6",
+            "inverse-surface": "#2d3133",
+            "surface-container-highest": "#e0e3e5",
+            "secondary": "#006a6a",
+            "on-tertiary-fixed-variant": "#6f3800",
+            "on-secondary": "#ffffff",
+            "surface-container-lowest": "#ffffff",
+            "inverse-primary": "#a0c9ff",
+            "on-surface-variant": "#42474f",
+            "on-tertiary-container": "#f9a767",
+            "on-error": "#ffffff",
+            "on-primary": "#ffffff",
+            "error": "#ba1a1a",
+            "error-container": "#ffdad6",
+            "secondary-fixed-dim": "#76d6d5",
+            "secondary-fixed": "#93f2f2",
+            "on-primary-container": "#8ebdf9",
+            "on-tertiary": "#ffffff",
+            "tertiary": "#532800",
+            "primary-fixed-dim": "#a0c9ff",
+            "on-primary-fixed-variant": "#07497d",
+            "surface-tint": "#2d6197",
+            "primary": "#00355f",
+            "on-background": "#191c1e",
+            "primary-container": "#0f4c81",
+            "surface-container-high": "#e6e8ea",
+            "inverse-on-surface": "#eff1f3"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "fontFamily": {
+            "headline": ["Manrope"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          }
+        },
+      },
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f7f9fb;
+    }
+
+    .font-manrope {
+      font-family: 'Manrope', sans-serif;
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #c2c7d1;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body class="text-on-surface antialiased">
+  <!-- SideNavBar -->
+  <aside class="h-screen w-64 fixed left-0 top-0 bg-[#f2f4f6] dark:bg-[#1d2023] flex flex-col py-6 px-4 gap-2 z-40">
+    <div class="px-2 mb-8 flex items-center gap-3">
+      <div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-white">
+        <span class="material-symbols-outlined">school</span>
+      </div>
+      <div>
+        <h1 class="font-['Manrope'] font-extrabold text-[#00355f] leading-none">Academic Architect</h1>
+        <p class="text-[10px] text-on-surface-variant uppercase tracking-wider font-bold">Senior Admin</p>
+      </div>
+    </div>
+    <nav class="flex-1 space-y-1">
+      <a class="flex items-center gap-3 px-4 py-3 text-[#42474f] dark:text-[#c2c7d1] hover:bg-[#e6e8ea] dark:hover:bg-[#2a2d31] hover:translate-x-1 transition-transform duration-200 font-['Inter'] text-sm rounded-lg"
+        href="#">
+        <span class="material-symbols-outlined">dashboard</span> Overview
+      </a>
+      <a class="flex items-center gap-3 px-4 py-3 bg-[#00355f] text-white rounded-lg shadow-lg font-['Inter'] text-sm"
+        href="#">
+        <span class="material-symbols-outlined">school</span> Classes
+      </a>
+      <a class="flex items-center gap-3 px-4 py-3 text-[#42474f] dark:text-[#c2c7d1] hover:bg-[#e6e8ea] dark:hover:bg-[#2a2d31] hover:translate-x-1 transition-transform duration-200 font-['Inter'] text-sm rounded-lg"
+        href="#">
+        <span class="material-symbols-outlined">book</span> Subjects
+      </a>
+      <a class="flex items-center gap-3 px-4 py-3 text-[#42474f] dark:text-[#c2c7d1] hover:bg-[#e6e8ea] dark:hover:bg-[#2a2d31] hover:translate-x-1 transition-transform duration-200 font-['Inter'] text-sm rounded-lg"
+        href="#">
+        <span class="material-symbols-outlined">fact_check</span> Attendance
+      </a>
+      <a class="flex items-center gap-3 px-4 py-3 text-[#42474f] dark:text-[#c2c7d1] hover:bg-[#e6e8ea] dark:hover:bg-[#2a2d31] hover:translate-x-1 transition-transform duration-200 font-['Inter'] text-sm rounded-lg"
+        href="#">
+        <span class="material-symbols-outlined">analytics</span> Reports
+      </a>
+    </nav>
+    <div class="mt-auto pt-6 border-t border-outline-variant/20 space-y-1">
+      <button
+        class="w-full mb-4 bg-primary text-white py-2.5 rounded-lg font-semibold text-sm flex items-center justify-center gap-2 shadow-sm hover:opacity-90 transition-opacity">
+        <span class="material-symbols-outlined text-sm">add</span> New Entry
+      </button>
+      <a class="flex items-center gap-3 px-4 py-3 text-[#42474f] dark:text-[#c2c7d1] hover:bg-[#e6e8ea] dark:hover:bg-[#2a2d31] hover:translate-x-1 transition-transform duration-200 font-['Inter'] text-sm rounded-lg"
+        href="#">
+        <span class="material-symbols-outlined">help</span> Help Center
+      </a>
+      <a class="flex items-center gap-3 px-4 py-3 text-[#42474f] dark:text-[#c2c7d1] hover:bg-[#e6e8ea] dark:hover:bg-[#2a2d31] hover:translate-x-1 transition-transform duration-200 font-['Inter'] text-sm rounded-lg"
+        href="#">
+        <span class="material-symbols-outlined">logout</span> Logout
+      </a>
+    </div>
+  </aside>
+  <!-- Main Content Area -->
+  <main class="ml-64 min-h-screen flex flex-col">
+    <!-- TopNavBar -->
+    <header
+      class="w-full sticky top-0 z-30 bg-[#f7f9fb]/80 dark:bg-[#191c1e]/80 backdrop-blur-xl flex justify-between items-center px-8 h-16 w-full shadow-sm dark:shadow-none">
+      <div class="flex items-center gap-8">
+        <span
+          class="text-xl font-['Manrope'] font-bold tracking-tight text-[#00355f] dark:text-white">adminSekolah</span>
+        <div class="hidden md:flex items-center gap-6 font-['Manrope'] text-sm font-medium">
+          <a class="text-[#42474f] dark:text-[#c2c7d1] hover:text-[#0f4c81] transition-colors cursor-pointer active:opacity-70"
+            href="#">Dashboard</a>
+          <a class="text-[#00355f] dark:text-white border-b-2 border-[#00355f] pb-1 cursor-pointer active:opacity-70"
+            href="#">Schedules</a>
+          <a class="text-[#42474f] dark:text-[#c2c7d1] hover:text-[#0f4c81] transition-colors cursor-pointer active:opacity-70"
+            href="#">Faculty</a>
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <div class="relative flex items-center">
+          <span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-lg">search</span>
+          <input
+            class="pl-10 pr-4 py-1.5 bg-surface-container-low border-none rounded-full text-sm w-64 focus:ring-1 focus:ring-primary"
+            placeholder="Search data..." type="text" />
+        </div>
+        <button class="p-2 text-on-surface-variant hover:bg-surface-container rounded-full transition-colors">
+          <span class="material-symbols-outlined">notifications</span>
+        </button>
+        <button class="p-2 text-on-surface-variant hover:bg-surface-container rounded-full transition-colors">
+          <span class="material-symbols-outlined">settings</span>
+        </button>
+        <div class="h-8 w-8 rounded-full bg-primary-container overflow-hidden ml-2 border border-outline-variant/30">
+          <img alt="Administrator profile" class="w-full h-full object-cover"
+            data-alt="professional portrait of a school administrator in a modern office setting, soft natural lighting, high quality photography"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgvbA_Iklqxq4JjBQbt9_tKp0710QvUFb-jZ-OOMGh5T8_Ml_E09-nRwwS4r2g9kSPXyc9JTDfb08-NiYnKCM10X4KzK4xHpNtKzqJ2Lwxybom4uFY3cPm0YscbJ1mJc3M3y3MEOjWi5avWUS2toiZHBFhEJVH6v3k7kG_jEMTo6kvl0xEYO2-B5vgfIfz76w1PrKFX4jvCwl9zIruuVJIxcHiYPbAENt4n4YkGW8qu4zX_I6Rd1vzjQ-V3BiIVVngt0rNvJDfk0io" />
+        </div>
+      </div>
+    </header>
+    <!-- Canvas -->
+    <div class="flex-1 p-8 overflow-y-auto">
+      <div class="max-w-6xl mx-auto space-y-10">
+        <!-- Section: Header -->
+        <div class="flex justify-between items-end">
+          <div>
+            <h2 class="text-3xl font-['Manrope'] font-extrabold text-on-surface tracking-tight">Akademik &amp;
+              Penjadwalan</h2>
+            <p class="text-on-surface-variant font-medium mt-1">Manage classes, subjects, and weekly schedules.</p>
+          </div>
+          <div class="flex gap-3">
+            <button
+              class="flex items-center gap-2 px-4 py-2 bg-surface-container-lowest text-on-surface border border-outline-variant/20 rounded-lg text-sm font-semibold hover:bg-surface-container transition-colors">
+              <span class="material-symbols-outlined text-sm">download</span> Export Report
+            </button>
+          </div>
+        </div>
+        <!-- Bento Grid / Stacked Sections -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <!-- Master Kelas Table -->
+          <section
+            class="bg-surface-container-lowest rounded-xl p-6 border-0 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] flex flex-col gap-4">
+            <div class="flex justify-between items-center">
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary">groups</span>
+                <h3 class="font-['Manrope'] font-bold text-lg text-primary">Master Kelas</h3>
+              </div>
+              <button
+                class="bg-primary text-white px-3 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1.5 hover:opacity-90 active:scale-95 transition-all">
+                <span class="material-symbols-outlined text-sm">add</span> Tambah Data
+              </button>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left">
+                <thead>
+                  <tr
+                    class="text-on-surface-variant text-xs uppercase tracking-widest border-b border-surface-container">
+                    <th class="pb-3 font-semibold">ID</th>
+                    <th class="pb-3 font-semibold">Nama Kelas</th>
+                    <th class="pb-3 font-semibold">Jurusan</th>
+                    <th class="pb-3 font-semibold text-right">Aksi</th>
+                  </tr>
+                </thead>
+                <tbody class="text-sm">
+                  <tr class="hover:bg-surface-container-low transition-colors group">
+                    <td class="py-4 font-medium text-primary">KLS-01</td>
+                    <td class="py-4">X MIPA 1</td>
+                    <td class="py-4"><span
+                        class="px-2 py-0.5 bg-secondary-fixed text-on-secondary-fixed-variant rounded-full text-[10px] font-bold uppercase">MIPA</span>
+                    </td>
+                    <td class="py-4 text-right">
+                      <button class="text-on-surface-variant hover:text-primary transition-colors"><span
+                          class="material-symbols-outlined text-lg">edit_note</span></button>
+                    </td>
+                  </tr>
+                  <tr
+                    class="hover:bg-surface-container-low transition-colors group border-t border-surface-container/50">
+                    <td class="py-4 font-medium text-primary">KLS-02</td>
+                    <td class="py-4">XI IPS 2</td>
+                    <td class="py-4"><span
+                        class="px-2 py-0.5 bg-tertiary-fixed text-on-tertiary-fixed-variant rounded-full text-[10px] font-bold uppercase">IPS</span>
+                    </td>
+                    <td class="py-4 text-right">
+                      <button class="text-on-surface-variant hover:text-primary transition-colors"><span
+                          class="material-symbols-outlined text-lg">edit_note</span></button>
+                    </td>
+                  </tr>
+                  <tr
+                    class="hover:bg-surface-container-low transition-colors group border-t border-surface-container/50">
+                    <td class="py-4 font-medium text-primary">KLS-03</td>
+                    <td class="py-4">XII MIPA 3</td>
+                    <td class="py-4"><span
+                        class="px-2 py-0.5 bg-secondary-fixed text-on-secondary-fixed-variant rounded-full text-[10px] font-bold uppercase">MIPA</span>
+                    </td>
+                    <td class="py-4 text-right">
+                      <button class="text-on-surface-variant hover:text-primary transition-colors"><span
+                          class="material-symbols-outlined text-lg">edit_note</span></button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+          <!-- Master Mapel Table -->
+          <section
+            class="bg-surface-container-lowest rounded-xl p-6 border-0 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] flex flex-col gap-4">
+            <div class="flex justify-between items-center">
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary">menu_book</span>
+                <h3 class="font-['Manrope'] font-bold text-lg text-primary">Master Mapel</h3>
+              </div>
+              <button
+                class="bg-primary text-white px-3 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1.5 hover:opacity-90 active:scale-95 transition-all">
+                <span class="material-symbols-outlined text-sm">add</span> Tambah Data
+              </button>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left">
+                <thead>
+                  <tr
+                    class="text-on-surface-variant text-xs uppercase tracking-widest border-b border-surface-container">
+                    <th class="pb-3 font-semibold">ID</th>
+                    <th class="pb-3 font-semibold">Nama Pelajaran</th>
+                    <th class="pb-3 font-semibold">Kategori</th>
+                    <th class="pb-3 font-semibold text-right">Aksi</th>
+                  </tr>
+                </thead>
+                <tbody class="text-sm">
+                  <tr class="hover:bg-surface-container-low transition-colors group">
+                    <td class="py-4 font-medium text-primary">MPL-101</td>
+                    <td class="py-4">Biologi Dasar</td>
+                    <td class="py-4"><span
+                        class="px-2 py-0.5 bg-primary-fixed text-on-primary-fixed-variant rounded-full text-[10px] font-bold uppercase">STEM</span>
+                    </td>
+                    <td class="py-4 text-right">
+                      <button class="text-on-surface-variant hover:text-primary transition-colors"><span
+                          class="material-symbols-outlined text-lg">edit_note</span></button>
+                    </td>
+                  </tr>
+                  <tr
+                    class="hover:bg-surface-container-low transition-colors group border-t border-surface-container/50">
+                    <td class="py-4 font-medium text-primary">MPL-205</td>
+                    <td class="py-4">Sosiologi Modern</td>
+                    <td class="py-4"><span
+                        class="px-2 py-0.5 bg-surface-container-high text-on-surface-variant rounded-full text-[10px] font-bold uppercase">Humanities</span>
+                    </td>
+                    <td class="py-4 text-right">
+                      <button class="text-on-surface-variant hover:text-primary transition-colors"><span
+                          class="material-symbols-outlined text-lg">edit_note</span></button>
+                    </td>
+                  </tr>
+                  <tr
+                    class="hover:bg-surface-container-low transition-colors group border-t border-surface-container/50">
+                    <td class="py-4 font-medium text-primary">MPL-104</td>
+                    <td class="py-4">Matematika Wajib</td>
+                    <td class="py-4"><span
+                        class="px-2 py-0.5 bg-primary-fixed text-on-primary-fixed-variant rounded-full text-[10px] font-bold uppercase">STEM</span>
+                    </td>
+                    <td class="py-4 text-right">
+                      <button class="text-on-surface-variant hover:text-primary transition-colors"><span
+                          class="material-symbols-outlined text-lg">edit_note</span></button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+          <!-- Jadwal Pelajaran Table (Full Width) -->
+          <section
+            class="lg:col-span-2 bg-surface-container-lowest rounded-xl p-8 border-0 shadow-[0_4px_25px_-5px_rgba(0,0,0,0.06)] flex flex-col gap-6">
+            <div class="flex justify-between items-center">
+              <div class="flex items-center gap-3">
+                <div class="p-2 bg-primary-container/10 rounded-lg">
+                  <span class="material-symbols-outlined text-primary">calendar_month</span>
+                </div>
+                <div>
+                  <h3 class="font-['Manrope'] font-extrabold text-xl text-primary">Jadwal Pelajaran</h3>
+                  <p class="text-xs text-on-surface-variant font-medium">Academic Year 2023/2024 - Semester 1</p>
+                </div>
+              </div>
+              <div class="flex gap-4 items-center">
+                <div class="flex items-center bg-surface-container rounded-lg p-1">
+                  <button
+                    class="px-4 py-1 text-xs font-bold bg-white text-primary shadow-sm rounded-md transition-all">Daily</button>
+                  <button
+                    class="px-4 py-1 text-xs font-bold text-on-surface-variant hover:text-on-surface transition-colors">Weekly</button>
+                </div>
+                <button
+                  class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 shadow-lg shadow-primary/20 hover:-translate-y-0.5 active:translate-y-0 transition-all">
+                  <span class="material-symbols-outlined text-sm">add_task</span> Tambah Jadwal
+                </button>
+              </div>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-separate border-spacing-y-2">
+                <thead>
+                  <tr class="text-on-surface-variant text-[11px] uppercase tracking-widest px-4">
+                    <th class="pb-2 pl-4 font-bold">ID</th>
+                    <th class="pb-2 font-bold">Hari</th>
+                    <th class="pb-2 font-bold">Waktu (Mulai - Selesai)</th>
+                    <th class="pb-2 font-bold">Kelas</th>
+                    <th class="pb-2 font-bold">Mapel</th>
+                    <th class="pb-2 font-bold">Guru Pengampu</th>
+                    <th class="pb-2 pr-4 text-right font-bold">Status</th>
+                  </tr>
+                </thead>
+                <tbody class="text-sm">
+                  <tr class="bg-surface-container-low/50 hover:bg-surface-container transition-all group rounded-xl">
+                    <td class="py-4 pl-4 font-bold text-primary rounded-l-xl">SCH-001</td>
+                    <td class="py-4 font-semibold">Senin</td>
+                    <td class="py-4">
+                      <div class="flex items-center gap-2 text-on-surface-variant">
+                        <span class="material-symbols-outlined text-xs">schedule</span>
+                        07:30 - 09:00
+                      </div>
+                    </td>
+                    <td class="py-4">X MIPA 1</td>
+                    <td class="py-4 font-semibold text-primary">Matematika Wajib</td>
+                    <td class="py-4">
+                      <div class="flex items-center gap-2">
+                        <div class="w-6 h-6 rounded-md bg-outline-variant overflow-hidden">
+                          <img alt="Teacher profile" class="w-full h-full object-cover"
+                            data-alt="professional school teacher headshot, warm educational setting, soft focused background"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuArjeGeM1WPYo2c1m9k2JRG2LTQ-02qEKYd_Fi99pzze9U2hSJYdl-qL2YfplAZtXzCse7P9Y6km2R4i-8-yd2ZvUqbQqzA56cfbcLl1Iu1iZTnJ2tB8hlhp01WPtXcddheKJWmH0UCPdStFdqW8pqYGye-X7t4IcFtFZJrsd--macGD8nobVO42f6jDQADzVrz3VADTo7DKV-qRoaHQHwotc1VcvRPuXbia1TxnzDz3NJ2GgVqobAPTZAjOyYhg7HrVaNqnwRdnoQv" />
+                        </div>
+                        <span>Drs. Bambang Wijaya</span>
+                      </div>
+                    </td>
+                    <td class="py-4 pr-4 text-right rounded-r-xl">
+                      <span
+                        class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-[10px] font-bold uppercase tracking-tight">Active</span>
+                    </td>
+                  </tr>
+                  <tr class="bg-surface-container-low/50 hover:bg-surface-container transition-all group rounded-xl">
+                    <td class="py-4 pl-4 font-bold text-primary rounded-l-xl">SCH-002</td>
+                    <td class="py-4 font-semibold">Senin</td>
+                    <td class="py-4">
+                      <div class="flex items-center gap-2 text-on-surface-variant">
+                        <span class="material-symbols-outlined text-xs">schedule</span>
+                        09:15 - 10:45
+                      </div>
+                    </td>
+                    <td class="py-4">X MIPA 1</td>
+                    <td class="py-4 font-semibold text-primary">Biologi Dasar</td>
+                    <td class="py-4">
+                      <div class="flex items-center gap-2">
+                        <div class="w-6 h-6 rounded-md bg-outline-variant overflow-hidden">
+                          <img alt="Teacher profile" class="w-full h-full object-cover"
+                            data-alt="friendly female educator portrait, academic environment, vibrant lighting"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQkBc72MA-H7nuCj7NLcv4Z7igoWvewRHWF1v1Z2fpLaTcoimwaOt5nV2A2XBWM2SR-dyrIG2gOqh55sN_b44_QVBbPja52nJWtK9F-K6s64NlaVdSgDAuqPe30_7dVas0ZKOVII_P0kboTXGBN4ai2qt3Q3I1RVMYPLbJqG7_yuTtrMBJBjeEBxldMefOTXiW9GQiTkyGkuOCp9038lrmfJDp9JXYypMik2sIKcWhF4x5TqfD9_IyU3KSIjvjs0dUJ4MUnwwG73Zd" />
+                        </div>
+                        <span>Siti Rahayu, M.Pd</span>
+                      </div>
+                    </td>
+                    <td class="py-4 pr-4 text-right rounded-r-xl">
+                      <span
+                        class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-[10px] font-bold uppercase tracking-tight">Active</span>
+                    </td>
+                  </tr>
+                  <tr class="bg-surface-container-low/50 hover:bg-surface-container transition-all group rounded-xl">
+                    <td class="py-4 pl-4 font-bold text-primary rounded-l-xl">SCH-003</td>
+                    <td class="py-4 font-semibold">Selasa</td>
+                    <td class="py-4">
+                      <div class="flex items-center gap-2 text-on-surface-variant">
+                        <span class="material-symbols-outlined text-xs">schedule</span>
+                        08:00 - 09:30
+                      </div>
+                    </td>
+                    <td class="py-4">XI IPS 2</td>
+                    <td class="py-4 font-semibold text-primary">Sosiologi Modern</td>
+                    <td class="py-4">
+                      <div class="flex items-center gap-2">
+                        <div class="w-6 h-6 rounded-md bg-outline-variant overflow-hidden">
+                          <img alt="Teacher profile" class="w-full h-full object-cover"
+                            data-alt="academic staff portrait, library background, high contrast editorial style"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBh2EyR0ETlQEpBMW3Mzs77Lex7G0qqesRjOaaWWVmJrjj9cN9Qa1e_I7ZX8F4DUk0MsvvKL7uHMb3_HuM0lBiT6Ftul045ogqwVN5bUSSiRPYZbvcnVpng5GP_plNl0pP8QHRV_QfqsUIjFi76vyQsKaZ5XVaXAhk74b6AWBcfy-bsq9f7rJmpbLcE3QKPNF_7ksQ-DXqsfoIJVSdXf7RQ2tqstYm3c7cHnEYki4OWH_fvujuH_e0uFxxtBmUE2gwDAgtkVE7zq7rg" />
+                        </div>
+                        <span>Ahmad Hidayat, S.Sos</span>
+                      </div>
+                    </td>
+                    <td class="py-4 pr-4 text-right rounded-r-xl">
+                      <span
+                        class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-[10px] font-bold uppercase tracking-tight">Active</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="flex items-center justify-between pt-4">
+              <p class="text-xs text-on-surface-variant font-medium">Showing 3 of 42 schedules</p>
+              <div class="flex gap-2">
+                <button
+                  class="p-2 border border-outline-variant/30 rounded-lg hover:bg-surface-container-low transition-colors">
+                  <span class="material-symbols-outlined text-sm">chevron_left</span>
+                </button>
+                <button
+                  class="w-8 h-8 flex items-center justify-center bg-primary text-white rounded-lg text-xs font-bold">1</button>
+                <button
+                  class="w-8 h-8 flex items-center justify-center hover:bg-surface-container-low rounded-lg text-xs font-bold">2</button>
+                <button
+                  class="w-8 h-8 flex items-center justify-center hover:bg-surface-container-low rounded-lg text-xs font-bold">3</button>
+                <button
+                  class="p-2 border border-outline-variant/30 rounded-lg hover:bg-surface-container-low transition-colors">
+                  <span class="material-symbols-outlined text-sm">chevron_right</span>
+                </button>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+    <!-- Dashboard Footer Decor -->
+    <footer class="p-8 text-center">
+      <p class="text-on-surface-variant text-[11px] font-medium tracking-widest uppercase">AdminSekolah Management
+        System © 2024</p>
+    </footer>
+  </main>
+  <!-- FAB Suppression Applied per Rule: Contextual suppression on Details/Management Screen -->
+</body>
+
+</html>

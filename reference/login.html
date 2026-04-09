@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login | adminSekolah</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface": "#f7f9fb",
+                    "on-primary-fixed": "#001c37",
+                    "inverse-surface": "#2d3133",
+                    "primary": "#00355f",
+                    "secondary": "#006a6a",
+                    "tertiary-fixed": "#ffdcc4",
+                    "outline-variant": "#c2c7d1",
+                    "on-tertiary-fixed": "#2f1400",
+                    "tertiary-fixed-dim": "#ffb780",
+                    "tertiary": "#532800",
+                    "secondary-fixed": "#93f2f2",
+                    "on-secondary-container": "#006e6e",
+                    "on-primary-fixed-variant": "#07497d",
+                    "outline": "#727780",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#743b00",
+                    "surface-dim": "#d8dadc",
+                    "surface-container-highest": "#e0e3e5",
+                    "surface-container-high": "#e6e8ea",
+                    "on-primary-container": "#8ebdf9",
+                    "secondary-fixed-dim": "#76d6d5",
+                    "surface-variant": "#e0e3e5",
+                    "on-primary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-container": "#0f4c81",
+                    "background": "#f7f9fb",
+                    "inverse-on-surface": "#eff1f3",
+                    "secondary-container": "#90efef",
+                    "on-tertiary-container": "#f9a767",
+                    "on-background": "#191c1e",
+                    "on-error": "#ffffff",
+                    "inverse-primary": "#a0c9ff",
+                    "on-secondary-fixed-variant": "#004f4f",
+                    "surface-container-low": "#f2f4f6",
+                    "on-secondary-fixed": "#002020",
+                    "primary-fixed-dim": "#a0c9ff",
+                    "on-surface-variant": "#42474f",
+                    "error": "#ba1a1a",
+                    "primary-fixed": "#d2e4ff",
+                    "on-surface": "#191c1e",
+                    "surface-container": "#eceef0",
+                    "on-error-container": "#93000a",
+                    "error-container": "#ffdad6",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#6f3800",
+                    "surface-tint": "#2d6197",
+                    "surface-bright": "#f7f9fb"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .signature-texture {
+            background: linear-gradient(135deg, #00355f 0%, #0f4c81 100%);
+        }
+        .bg-pattern {
+            background-color: #f7f9fb;
+            background-image: radial-gradient(#c2c7d1 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-background selection:bg-primary-container selection:text-white">
+<main class="min-h-screen flex items-center justify-center p-6 bg-pattern">
+<!-- Login Card Container -->
+<div class="w-full max-w-md flex flex-col items-center">
+<!-- Branding Header -->
+<div class="mb-10 text-center">
+<div class="flex justify-center mb-4">
+<div class="w-16 h-16 signature-texture rounded-xl flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-white text-4xl" data-icon="school">school</span>
+</div>
+</div>
+<h1 class="font-headline text-3xl font-extrabold tracking-tight text-primary">adminSekolah</h1>
+<p class="font-body text-on-surface-variant mt-2 text-sm">Institutional Access Portal</p>
+</div>
+<!-- Login Card -->
+<div class="w-full bg-surface-container-lowest p-8 md:p-10 rounded-xl shadow-[0_24px_40px_rgba(25,28,30,0.04)] relative overflow-hidden">
+<!-- Subtle Gradient Accent on Top -->
+<div class="absolute top-0 left-0 w-full h-1 signature-texture"></div>
+<div class="space-y-6">
+<div class="text-center md:text-left">
+<h2 class="font-headline text-xl font-bold text-on-surface">Secure Sign-In</h2>
+<p class="text-on-surface-variant text-sm mt-1">Please enter your institutional credentials.</p>
+</div>
+<form action="#" class="space-y-5" method="POST">
+<!-- Email / NISN Field -->
+<div class="space-y-1.5">
+<label class="block font-label text-xs font-semibold text-on-surface-variant uppercase tracking-wider" for="identifier">Email or NISN</label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined text-lg" data-icon="person">person</span>
+</div>
+<input class="block w-full pl-11 pr-4 py-3 bg-surface-container-highest border-0 rounded-lg text-on-surface placeholder:text-outline focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all duration-200 text-sm" id="identifier" name="identifier" placeholder="Enter your email or ID" type="text"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="space-y-1.5">
+<div class="flex justify-between items-center">
+<label class="block font-label text-xs font-semibold text-on-surface-variant uppercase tracking-wider" for="password">Password</label>
+<a class="text-xs font-semibold text-primary hover:text-primary-container transition-colors" href="#">Forgot Password?</a>
+</div>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined text-lg" data-icon="lock">lock</span>
+</div>
+<input class="block w-full pl-11 pr-12 py-3 bg-surface-container-highest border-0 rounded-lg text-on-surface placeholder:text-outline focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all duration-200 text-sm" id="password" name="password" placeholder="••••••••" type="password"/>
+<button class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-outline hover:text-on-surface-variant transition-colors" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+<!-- Submit Button -->
+<div class="pt-2">
+<button class="w-full signature-texture text-white font-headline font-bold py-3.5 rounded-lg shadow-md hover:shadow-lg active:scale-[0.98] transition-all duration-150 flex items-center justify-center gap-2" type="submit">
+<span>Access Portal</span>
+<span class="material-symbols-outlined text-lg" data-icon="login">login</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+<!-- Footer Utility -->
+<div class="mt-8 flex flex-col items-center gap-4">
+<div class="flex items-center gap-6 text-outline text-xs font-medium">
+<a class="hover:text-on-surface-variant transition-colors flex items-center gap-1.5" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="help">help</span>
+                        Help Center
+                    </a>
+<a class="hover:text-on-surface-variant transition-colors flex items-center gap-1.5" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="shield">shield</span>
+                        Privacy Policy
+                    </a>
+</div>
+<div class="flex items-center gap-2 px-4 py-2 bg-surface-container-high rounded-full">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="text-[10px] text-on-surface-variant font-bold uppercase tracking-widest">System Status: Operational</span>
+</div>
+</div>
+</div>
+<!-- Background Image Decorative Elements (Editorial Style) -->
+<div class="hidden lg:block fixed -bottom-20 -left-20 w-96 h-96 opacity-10 pointer-events-none">
+<img alt="" class="w-full h-full object-contain filter grayscale" data-alt="abstract close-up of classical architectural library arches with soft light and minimalist composition" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUWOHXygLZ5SWPPx5Iq3SDqaf2_zKZ_s16CkyLXNZIjDlew74wLb5AjeGxZlC-i8Unr3fD1_veF6qqpm15kzbfoiE_ezVvnOP6SdEp3MT8lMbZ0NSPKvXwbbMHhxzC6eWzAiR3zYhmgzKXDeyIFrKzl4JEs7Qx5XU0QN8lHqQ0_1pGe6jE0PnItXX3S1VEDWeUF9jTV1LiuT_KOXnqNsxn1uNMhATDF6CRhjs5E0LEUT4skM5fuW8kwrszw5blgJn4MB9Ups6lwbtl"/>
+</div>
+<div class="hidden lg:block fixed top-10 -right-20 w-80 h-80 opacity-5 pointer-events-none transform rotate-12">
+<img alt="" class="w-full h-full object-contain filter grayscale" data-alt="minimalist overhead shot of clean white notebooks and fountain pen on textured surface in soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUR44n0OODFQ0dAGRWSLPkvNA-8C0KC2ds5fS1S1jpargrdRTA8j2hqSrBv5qNlyc6COhlEbXyZ9KthRwUkdgt4BoW2h-Y4HWd73JkV84t-VGaz089H8Prq8C16xxLrjrDQo-fMv2HcmC0lluOxSRMjDTTTHNpeUxg54eJhr8ai7mTc0fzmyzw_OxTL6KO7bs2drNRr8GEDLreyvMxwKV83tq_wCU2FEvrT5zuOg2PtPY_lLSYrJG5dZpjgLXavQPdLh_AHX2fJqsq"/>
+</div>
+</main>
+</body></html>

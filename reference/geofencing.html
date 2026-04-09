@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>adminSekolah | System Settings &amp; Geofencing</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "inverse-surface": "#2d3133",
+            "surface-container-lowest": "#ffffff",
+            "inverse-on-surface": "#eff1f3",
+            "on-primary-fixed-variant": "#07497d",
+            "surface-container-low": "#f2f4f6",
+            "surface-tint": "#2d6197",
+            "background": "#f7f9fb",
+            "error": "#ba1a1a",
+            "primary-fixed": "#d2e4ff",
+            "outline": "#727780",
+            "on-secondary-fixed": "#002020",
+            "on-tertiary-fixed": "#2f1400",
+            "tertiary": "#532800",
+            "surface-container-highest": "#e0e3e5",
+            "tertiary-fixed-dim": "#ffb780",
+            "on-tertiary": "#ffffff",
+            "surface": "#f7f9fb",
+            "on-background": "#191c1e",
+            "secondary": "#006a6a",
+            "on-tertiary-container": "#f9a767",
+            "on-secondary-container": "#006e6e",
+            "on-surface": "#191c1e",
+            "on-secondary": "#ffffff",
+            "error-container": "#ffdad6",
+            "on-error-container": "#93000a",
+            "primary": "#00355f",
+            "surface-container": "#eceef0",
+            "secondary-container": "#90efef",
+            "on-primary-fixed": "#001c37",
+            "on-tertiary-fixed-variant": "#6f3800",
+            "surface-variant": "#e0e3e5",
+            "outline-variant": "#c2c7d1",
+            "tertiary-fixed": "#ffdcc4",
+            "surface-bright": "#f7f9fb",
+            "on-primary": "#ffffff",
+            "on-secondary-fixed-variant": "#004f4f",
+            "primary-fixed-dim": "#a0c9ff",
+            "primary-container": "#0f4c81",
+            "secondary-fixed": "#93f2f2",
+            "secondary-fixed-dim": "#76d6d5",
+            "on-primary-container": "#8ebdf9",
+            "on-error": "#ffffff",
+            "inverse-primary": "#a0c9ff",
+            "surface-container-high": "#e6e8ea",
+            "on-surface-variant": "#42474f",
+            "surface-dim": "#d8dadc",
+            "tertiary-container": "#743b00"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "fontFamily": {
+            "headline": ["Manrope"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    h1, h2, h3, .font-headline { font-family: 'Manrope', sans-serif; }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .custom-gradient {
+      background: linear-gradient(135deg, #00355f 0%, #0f4c81 100%);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- Side Navigation Shell -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#f2f4f6] dark:bg-slate-950 flex flex-col p-4 space-y-2 z-50">
+<div class="mb-8 px-4 flex items-center space-x-3">
+<div class="w-10 h-10 custom-gradient rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">school</span>
+</div>
+<div>
+<h1 class="text-lg font-black text-[#00355f] dark:text-white leading-tight">adminSekolah</h1>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Institutional Portal</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center space-y-0 text-slate-600 dark:text-slate-400 py-3 px-4 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-lg transition-all duration-300" href="#">
+<span class="material-symbols-outlined mr-3">dashboard</span>
+<span class="text-sm font-medium Inter">Dashboard</span>
+</a>
+<a class="flex items-center space-y-0 text-slate-600 dark:text-slate-400 py-3 px-4 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-lg transition-all duration-300" href="#">
+<span class="material-symbols-outlined mr-3">group</span>
+<span class="text-sm font-medium Inter">Students</span>
+</a>
+<a class="flex items-center space-y-0 text-slate-600 dark:text-slate-400 py-3 px-4 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-lg transition-all duration-300" href="#">
+<span class="material-symbols-outlined mr-3">school</span>
+<span class="text-sm font-medium Inter">Teachers</span>
+</a>
+<a class="flex items-center space-y-0 text-slate-600 dark:text-slate-400 py-3 px-4 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-lg transition-all duration-300" href="#">
+<span class="material-symbols-outlined mr-3">calendar_today</span>
+<span class="text-sm font-medium Inter">Schedules</span>
+</a>
+<a class="flex items-center bg-white dark:bg-slate-900 text-[#0F4C81] dark:text-blue-300 shadow-sm rounded-lg py-3 px-4 transition-all duration-300" href="#">
+<span class="material-symbols-outlined mr-3">location_on</span>
+<span class="text-sm font-medium Inter">Geofencing</span>
+</a>
+</nav>
+<div class="pt-4 mt-auto border-t border-outline-variant/10 space-y-1">
+<a class="flex items-center text-slate-600 dark:text-slate-400 py-3 px-4 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-lg transition-all duration-300" href="#">
+<span class="material-symbols-outlined mr-3">help</span>
+<span class="text-sm font-medium Inter">Help Center</span>
+</a>
+<a class="flex items-center text-slate-600 dark:text-slate-400 py-3 px-4 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-lg transition-all duration-300" href="#">
+<span class="material-symbols-outlined mr-3">logout</span>
+<span class="text-sm font-medium Inter">Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 min-h-screen">
+<!-- TopAppBar Shell -->
+<header class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl sticky top-0 z-40 shadow-sm dark:shadow-none flex justify-between items-center w-full px-8 py-3">
+<div class="flex items-center space-x-4">
+<h2 class="text-xl font-bold tracking-tight text-[#00355f] dark:text-white">Settings</h2>
+</div>
+<div class="flex items-center space-x-4">
+<div class="relative">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">search</span>
+</span>
+<input class="bg-surface-container-low border-none rounded-full pl-10 pr-4 py-2 text-sm w-64 focus:ring-2 focus:ring-primary/20" placeholder="Search parameters..." type="text"/>
+</div>
+<button class="p-2 text-on-surface-variant hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="w-8 h-8 rounded-lg overflow-hidden bg-surface-container-highest">
+<img alt="Administrator profile picture" class="w-full h-full object-cover" data-alt="professional portrait of a school administrator in a clean office setting, soft natural lighting, editorial style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZaYOxYI2B0m_-AYIhk9CUVCWFtx-v4vM02SD37f-Pccp151jWmyIkZGuehtsKQFIQPPdtSYe7uIqVUUSSIJ_RAhKC4TpbLPn386EdNmpkW5N_6N4phDoaumKEZNp-rIE8gQolxg0hxasxwlr7gHPY_GuoaswjdW7aKNM4T-uhGdMQ9atzxuQ7fh03XUbNVFciY12fikMQm6k41A_weekwoAIfidEmD-4vdEvcc7Hi1vzPKXiWq_yvGrEb4RwyKSK1WuHNKILuU_n4"/>
+</div>
+</div>
+</header>
+<div class="px-12 py-10 max-w-7xl mx-auto">
+<!-- Page Header -->
+<div class="mb-10">
+<h3 class="text-3xl font-extrabold text-on-surface tracking-tight mb-2">System Infrastructure</h3>
+<p class="text-on-surface-variant text-lg max-w-2xl">Configure the digital boundaries and temporal framework of the institution. These settings define how the attendance system interacts with physical hardware and school cycles.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Section 1: Wi-Fi Geofencing -->
+<div class="lg:col-span-2 space-y-6">
+<section class="bg-surface-container-lowest rounded-xl p-8 border border-outline-variant/15">
+<div class="flex items-center justify-between mb-8">
+<div class="flex items-center space-x-4">
+<div class="w-12 h-12 bg-secondary/10 text-secondary rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">wifi_tethering</span>
+</div>
+<div>
+<h4 class="text-xl font-bold text-on-surface">Wi-Fi Geofencing</h4>
+<p class="text-sm text-on-surface-variant">Authorize access based on local network proximity</p>
+</div>
+</div>
+<span class="px-3 py-1 bg-secondary-fixed text-on-secondary-fixed text-[10px] font-black uppercase rounded-full tracking-wider">Active Policy</span>
+</div>
+<div class="space-y-6">
+<!-- Router Entry Template -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider ml-1">Primary Router SSID</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg p-4 focus:ring-2 focus:ring-primary transition-all text-on-surface font-medium" type="text" value="AS-Main-Campus-01"/>
+</div>
+<div class="space-y-2">
+<div class="flex items-center justify-between ml-1">
+<label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">BSSID (MAC Address)</label>
+<div class="group relative flex items-center cursor-help">
+<span class="material-symbols-outlined text-sm text-outline">info</span>
+<div class="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 w-48 p-2 bg-inverse-surface text-inverse-on-surface text-[10px] rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                        BSSID is the unique hardware identifier of your router's wireless interface.
+                      </div>
+</div>
+</div>
+<input class="w-full bg-surface-container-low border-none rounded-lg p-4 focus:ring-2 focus:ring-primary transition-all text-on-surface font-mono text-sm" placeholder="00:1A:2B:3C:4D:5E" type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+<div class="space-y-2">
+<label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider ml-1">Secondary Router SSID</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg p-4 focus:ring-2 focus:ring-primary transition-all text-on-surface font-medium" type="text" value="AS-Science-Wing"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider ml-1">BSSID (MAC Address)</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg p-4 focus:ring-2 focus:ring-primary transition-all text-on-surface font-mono text-sm" type="text" value="BC:67:88:E2:10:9A"/>
+</div>
+</div>
+<button class="flex items-center text-primary font-bold text-sm hover:underline ml-1 pt-2">
+<span class="material-symbols-outlined mr-2">add_circle</span>
+                Add New Router Node
+              </button>
+</div>
+<div class="mt-10 flex items-center justify-between border-t border-outline-variant/10 pt-8">
+<p class="text-xs text-on-surface-variant italic">Changes require a system restart for full implementation across all terminals.</p>
+<button class="custom-gradient text-white px-8 py-3 rounded-lg font-bold text-sm shadow-md transition-all active:scale-95">Save Connectivity Settings</button>
+</div>
+</section>
+<!-- System Status Map Representation -->
+<div class="bg-surface-container-low rounded-xl p-1 overflow-hidden h-64 relative">
+<div class="absolute inset-0 bg-slate-200">
+<img alt="campus map" class="w-full h-full object-cover mix-blend-multiply opacity-50" data-alt="abstract architectural blueprint of a school campus with geometric lines and blue highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTGHGip3go9CA4x3fbCkkQEwnJl3IV3GCUHzZi2oicfpAGK8NBQhyxnUmkwtQYR3uLF-TF4Vlzjct5465Wp_PZ3OFS9LN02cZ-fRRnjCab4ZfxEJEvhSCgtxxIaibzu-oMhADezMTdBLq2HigZTgdVqdaRmuHSESCJgLrBkBSKPIq6kGJEwMoU56ZylmtS4GtG1k4ytzpbu31yBQUrY_00oWWGDk1jcXYG4TCUrWChrnGiuZ7zq1UPsB8CyBDXS04zQtp4a0Yq-81G"/>
+</div>
+<div class="relative z-10 p-8 flex flex-col h-full justify-between pointer-events-none">
+<div class="flex space-x-2">
+<div class="bg-white px-3 py-1 rounded-full shadow-sm text-[10px] font-bold flex items-center text-on-surface">
+<span class="w-2 h-2 rounded-full bg-green-500 mr-2"></span> Router 01: Live
+                 </div>
+<div class="bg-white px-3 py-1 rounded-full shadow-sm text-[10px] font-bold flex items-center text-on-surface">
+<span class="w-2 h-2 rounded-full bg-green-500 mr-2"></span> Router 02: Live
+                 </div>
+</div>
+<div class="text-white">
+<p class="text-xs font-bold uppercase tracking-tighter opacity-80">Location Verification</p>
+<h5 class="text-xl font-bold">Campus Zone A-01 Protected</h5>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 2: Global Time Config -->
+<div class="space-y-8">
+<section class="bg-surface-container-lowest rounded-xl p-8 border border-outline-variant/15">
+<div class="flex items-center space-x-4 mb-8">
+<div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">schedule</span>
+</div>
+<div>
+<h4 class="text-xl font-bold text-on-surface">Global Time Config</h4>
+<p class="text-sm text-on-surface-variant">Sync attendance thresholds</p>
+</div>
+</div>
+<div class="space-y-8">
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">School Start Time</label>
+<span class="text-primary font-bold text-xs">Standard Cycle</span>
+</div>
+<div class="relative">
+<input class="w-full bg-surface-container-low border-none rounded-lg p-5 focus:ring-2 focus:ring-primary transition-all text-on-surface text-2xl font-black" type="time" value="07:00"/>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined">access_time</span>
+</div>
+</div>
+</div>
+<div class="space-y-4 pt-4 border-t border-outline-variant/10">
+<div class="flex items-center justify-between">
+<label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Dhuha Prayer Range</label>
+<div class="group relative flex items-center cursor-help">
+<span class="material-symbols-outlined text-sm text-outline">info</span>
+<div class="absolute bottom-full mb-2 right-0 w-56 p-2 bg-inverse-surface text-inverse-on-surface text-[10px] rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                      Define the time window during which attendance for Dhuha is recorded.
+                    </div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-2">
+<p class="text-[10px] font-bold text-outline text-center">BEGIN</p>
+<input class="w-full bg-surface-container-low border-none rounded-lg p-3 focus:ring-2 focus:ring-primary transition-all text-on-surface text-lg font-bold text-center" type="time" value="08:30"/>
+</div>
+<div class="space-y-2">
+<p class="text-[10px] font-bold text-outline text-center">END</p>
+<input class="w-full bg-surface-container-low border-none rounded-lg p-3 focus:ring-2 focus:ring-primary transition-all text-on-surface text-lg font-bold text-center" type="time" value="10:00"/>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Auto-Lock System</label>
+<button class="w-10 h-6 bg-primary rounded-full relative transition-colors">
+<span class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full"></span>
+</button>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">Automatically disable terminal access after last prayer session concludes.</p>
+</div>
+<button class="w-full bg-primary-container text-white py-4 rounded-lg font-bold shadow-sm transition-all active:scale-95 hover:bg-primary-container/90">Update Schedule</button>
+</div>
+</section>
+<!-- Decorative Info Card -->
+<div class="bg-primary text-white rounded-xl p-8 relative overflow-hidden">
+<div class="relative z-10">
+<h5 class="text-lg font-bold mb-2">Automated Logs</h5>
+<p class="text-sm opacity-80 mb-6 leading-relaxed">The system generates daily compliance reports automatically at 23:59 based on these configurations.</p>
+<a class="inline-flex items-center text-xs font-bold bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full transition-colors" href="#">
+                View Audit Trail <span class="material-symbols-outlined text-sm ml-2">arrow_forward</span>
+</a>
+</div>
+<span class="material-symbols-outlined absolute -right-4 -bottom-4 text-9xl opacity-10 rotate-12">history_edu</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Mobile Bottom Nav (Suppressed on large screens as per instructions) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-outline-variant/10 flex justify-around items-center py-3 z-50">
+<button class="flex flex-col items-center space-y-1 text-slate-500">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-medium">Dash</span>
+</button>
+<button class="flex flex-col items-center space-y-1 text-slate-500">
+<span class="material-symbols-outlined">group</span>
+<span class="text-[10px] font-medium">Students</span>
+</button>
+<button class="flex flex-col items-center space-y-1 text-[#0F4C81]">
+<span class="material-symbols-outlined">location_on</span>
+<span class="text-[10px] font-bold">Geo</span>
+</button>
+<button class="flex flex-col items-center space-y-1 text-slate-500">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-medium">Set</span>
+</button>
+</nav>
+</body></html>
